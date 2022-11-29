@@ -18,4 +18,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 
-Route::resource('perros',App\Http\Controllers\PerroController::class)->only(['index','store','show','update','destroy']);
+

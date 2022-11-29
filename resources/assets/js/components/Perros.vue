@@ -1,52 +1,22 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Perros</div>
-
-                    <div class="panel-body">
-                       <h3>Listado Perros</h3>
-                       <ul class="list-group">
-                            <li class="list-group-item" v-for="perro in list">{{perro.imagen}}</li>
-                            <li class="list-group-item" v-for="perro in list">{{perro.nombre}}</li>
-                            <li class="list-group-item" v-for="perro in list">{{perro.raza}}</li>
-                            <li class="list-group-item" v-for="perro in list">{{perro.tamaño}}</li>
-                            <li class="list-group-item" v-for="perro in list">{{perro.color}}</li>
-                       </ul>
+    <main>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <router-link to="/" class="navbar-brand" href="#">Perros</router-link>
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav">
+                        <router-link exact-active-class="active" to="/" class="nav-item nav-link">Inicio</router-link>
+                        <router-link exact-active-class="active" to="/Perros" class="nav-item nav-link">Perros</router-link>
                     </div>
                 </div>
             </div>
+        </nav>
+        <div class="container mt-5">
+            <router-view></router-view>
         </div>
-    </div>
+    </main>
 </template>
-
+ 
 <script>
-    export default {
-        data:function() {
-            return {
-                list:[],
-                perro:{
-                    id:'',
-                    imagen:'',
-                    nombre:'',
-                    raza:'',
-                    tamaño:'',
-                    color:''
-                }
-            };
-        },
-
-        created: function(){
-            this.fetchPerroList();
-        },
-
-        methods: {
-            fetchPerroList: function() {
-                this.$http.get('api/perros').then(function(response){
-                    this.list = response.data
-                });
-            }
-        }
-    }
+    export default {}
 </script>
