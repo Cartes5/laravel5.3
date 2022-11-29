@@ -17,10 +17,5 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::group(['middleware' => 'api'], function() {
-    
-    Route::get('perros', function() {
-        return App\Perros::latest()->orderBy('created_at', 'desc')->get();
-    });
 
-});
+Route::resource('perros',App\Http\Controllers\PerroController::class)->only(['index','store','show','update','destroy']);
