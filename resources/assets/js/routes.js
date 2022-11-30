@@ -1,4 +1,4 @@
-const Welcome = () => import('./components/Welcome.vue' /* webpackChunkName: "resource/js/components/welcome" */)
+const app = () => import('./components/Perros.vue' /* webpackChunkName: "resource/js/components/welcome" */)
 const perroList = () => import('./components/Perros/List.vue' /* webpackChunkName: "resource/js/components/Perros/list" */)
 const perroCreate = () => import('./components/Perros/Add.vue' /* webpackChunkName: "resource/js/components/Perros/add" */)
 const perroEdit = () => import('./components/Perros/Edit.vue' /* webpackChunkName: "resource/js/components/Perros/edit" */)
@@ -7,7 +7,7 @@ export const routes = [
     {
         name: 'home',
         path: '/',
-        component: Welcome
+        component: app
     },
     {
         name: 'perroList',

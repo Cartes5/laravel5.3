@@ -5,8 +5,8 @@
                 <router-link to="/" class="navbar-brand" href="#">Perros</router-link>
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav">
-                        <router-link exact-active-class="active" to="/" class="nav-item nav-link">Inicio</router-link>
-                        <router-link exact-active-class="active" to="/Perros" class="nav-item nav-link">Perros</router-link>
+                        <router-link to="/" class="nav-item nav-link">Inicio</router-link>
+                        <router-link to="/Perros" class="nav-item nav-link">Perros</router-link>
                     </div>
                 </div>
             </div>
